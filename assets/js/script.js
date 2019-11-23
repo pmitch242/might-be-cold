@@ -1,42 +1,43 @@
 $(document).ready(function () {
     // =========================VARIBLES===========================
-    // Array that holds strings from localStorage
-    // var cities = JSON.parse(localStorage.getItem("City"));
-
+    var APIkey = "1fb03cd6dac17b324934023f63ff9654";
     var cities = [];
-    // var last = JSON.parse(localStorage.getItem("City"));
-    // console.log("We found this array in localStorage: ", last);
-
-
-    // if (typeof cities !== 'undefined' && cities !== null) {
-    //     // cities = JSON.parse(localStorage.getItem("City"));
-    //     var cities = [];
-    //     console.log(cities);
-    // }
-
-    // if (typeof localStorage == null){
-    //     var cities = JSON.parse(localStorage.getItem("City"));
-    //     // var cities = [];
-    //     console.log(cities);
-    // }
-
     // =========================FUNCTIONS===========================
 
-    function startup() {
-        //empty cities before adding new cities
-        // $("#city-buttons-div").empty();
+    function displayCurrentWeather(){
+        //======Varibles======
+        var cityNameDiv = $("<h3>");
+        var temp = $("<div>");
+        var humidity = $("<div>");
+        var windSpeed = $("<div>");
+        
+        var cityCurrent = $(this).attr("data-city");
+        console.log("this was clicked: " + cityCurrent);
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityCurrent + "&units=imperial&appid=" + APIkey;
 
-        // var cities = JSON.parse(localStorage.getItem("City"));
+        // Ajax call
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+
+        .then(function(response){
+            console.log(response);
+        })
+    }
+    
+    function startup() {
+        // Array that holds strings from localStorage
         var last = JSON.parse(localStorage.getItem("City"));
         console.log("We found this array in localStorage: ", last);
-        
+
         //loop through cities array
         for (var i = 0; i < last.length; i++) {
             // varible to create button
             var resultButton = $("<button>");
             // add class and attribute
             resultButton.addClass("city-button");
-            resultButton.attr("data-city");
+            resultButton.attr("data-city", last[i]);
             // display city name on button
             resultButton.text(last[i]);
             // put button in div to move button to next line
@@ -60,7 +61,7 @@ $(document).ready(function () {
             var resultButton = $("<button>");
             // add class and attribute
             resultButton.addClass("city-button");
-            resultButton.attr("data-city");
+            resultButton.attr("data-city", cities[i]);
             // display city name on button
             resultButton.text(cities[i]);
             // put button in div to move button to next line
@@ -84,6 +85,12 @@ $(document).ready(function () {
         localStorage.setItem("City", JSON.stringify(cities));
         renderButtons();
     });
+
+
+    // Adding a click event listener to all elements with a class of "movie-btn"
+    $(document).on("click", ".city-button", displayCurrentWeather);
+
+    // display localstorage after page loads
     startup();
     // renderButtons();
 });
