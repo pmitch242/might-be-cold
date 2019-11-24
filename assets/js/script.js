@@ -30,7 +30,7 @@ $(document).ready(function () {
 
             // Store city name 
             var cityName = a.name;
-            cityNameDiv.text(cityName);
+            cityNameDiv.text(cityName + " (" + moment().format('l') + ")");
             curretResultsDiv.append(cityNameDiv);
 
             // Display Icon
@@ -102,6 +102,7 @@ $(document).ready(function () {
         var m = 0;
         var n = 0;
         var o = 4;
+        var p = 0;
 
         // Ajax call
         $.ajax({
@@ -113,9 +114,12 @@ $(document).ready(function () {
                 console.log("i = " + i);
                 n += 8;
                 console.log("n = " + n);
+                p ++;
+                console.log("p = " + p);
+
 
                 // =======Varibles=======
-                var dateDiv = $("<div>");
+                var dateH5 = $("<h5>");
                 var iconImg = $("<img>");
                 var b = a.list[o];
 
@@ -125,6 +129,13 @@ $(document).ready(function () {
                 var miniWeatherBody = $("<div>");
                 miniWeatherBody.addClass("card-body");
 
+                // Display date
+                var date = moment().add(p, 'days').calendar('L');
+                console.log("Five day forcast date is: " + date);
+                dateH5.text(date);
+                miniWeatherBody.append(dateH5);
+
+                
                 // Display icon
                 var iconPull = b.weather[0].icon;
                 console.log("o = " + o);
