@@ -76,7 +76,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: queryURLUV,
                     method: "GET"
-                }).then(function(uvResponse){
+                }).then(function (uvResponse) {
                     console.log(uvResponse);
 
                     var uvResult = uvResponse.value;
@@ -94,8 +94,7 @@ $(document).ready(function () {
 
 
     function displayFiveDay() {
-        // Clear fiveDayDiv
-        // fiveDayDiv.empty();
+
         var cityFive = $(this).attr("data-city");
         console.log("this was city's weather was requested: " + cityFive);
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityFive + "&units=imperial&appid=" + APIkey;
@@ -109,12 +108,15 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET",
         }).then(function (a) {
+            // Clear fiveDayDiv
+            fiveDayDiv.empty();
+            
             console.log(a);
             for (var i = 0; i < 40; i += 8) {
                 console.log("i = " + i);
                 n += 8;
                 console.log("n = " + n);
-                p ++;
+                p++;
                 console.log("p = " + p);
 
 
@@ -135,7 +137,7 @@ $(document).ready(function () {
                 dateH5.text(date);
                 miniWeatherBody.append(dateH5);
 
-                
+
                 // Display icon
                 var iconPull = b.weather[0].icon;
                 console.log("o = " + o);
