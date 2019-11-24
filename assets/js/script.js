@@ -68,6 +68,8 @@ $(document).ready(function () {
                 var uvIndexDiv = $("<div>");
                 var badgeSpan = $("<span>");
                 badgeSpan.addClass("badge badge-danger");
+                // badgeSpan.parent().attr("id", "bagdeParent");
+                // badgeSpan.parent().css("display", "inline-block")
 
 
                 var queryURLUV = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + long + "&appid=" + APIkey;
@@ -83,6 +85,7 @@ $(document).ready(function () {
                     badgeSpan.text(uvResult);
                     uvIndexDiv.append(badgeSpan);
                     curretResultsDiv.append("UV Index: ", uvIndexDiv);
+                    // curretResultsDiv.append(uvIndexDiv);
 
                 })
 
@@ -232,7 +235,7 @@ $(document).ready(function () {
             // varible to create button
             var resultButton = $("<button>");
             // add class and attribute
-            resultButton.addClass("city-button");
+            resultButton.addClass("city-button list-group-item");
             resultButton.attr("data-city", last[i]);
             // display city name on button
             resultButton.text(last[i]);
@@ -256,7 +259,7 @@ $(document).ready(function () {
             // varible to create button
             var resultButton = $("<button>");
             // add class and attribute
-            resultButton.addClass("city-button");
+            resultButton.addClass("city-button list-group-item");
             resultButton.attr("data-city", cities[i]);
             // display city name on button
             resultButton.text(cities[i]);

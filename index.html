@@ -17,44 +17,41 @@
 
 <body>
     <!-- Header -->
-    <header style="background: black; color: white; text-align: center; padding: 30px;">Weather Dashboard</header>
-
+    <header>Weather Dashboard</header>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3" id="search-container" style="background: blue;">
-                #background
-                <div style="background: pink;">
-                    <h4>Search for a City</h4>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Recipient's username"
+            <!-- Search Container -->
+            <div class="col-sm-3" id="search-container">
+                <div>
+                    <h5 id="search-header">Search for a City:</h5>
+                    <div class="input-group mb-3" id="inputGroup">
+                        <input type="text" class="form-control"
                             aria-label="Recipient's username" aria-describedby="button-addon2" id="userInput">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary add-city" type="button" id="button-addon2">
+                            <button class="btn btn-primary add-city" type="button" id="button-addon2">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div id="city-buttons-div" style="background: lightgreen;">Div for Search Button Results</div>
-                <h4>Previous Search History</h4>
-                <div id="city-buttons-lastdiv" style="background: rgb(238, 144, 225);">Div for Search Button Results</div>
-                #background
+                <!-- Current Search History -->
+                <div id="city-buttons-div"></div>
+                <!-- Previous Search History -->
+                <div id="city-buttons-lastdiv"></div>
             </div>
-            <div class="col-sm-9" id="results-container" style="background: red;">
-                #background
+
+            <!-- Results Container -->
+            <div class="col-sm-9" id="results-container">
                 <div class="row">
-                    <div class="col-sm" id="current-weather-div" style="background: yellow;">
-                        Div for current results
-                    </div>
+                    <div class="col-sm" id="current-weather-div"></div>
                 </div>
                 <div class="row">
-                    <div class="col-sm" id="fiveday-container" style="background: purple;">
+                    <div class="col-sm" id="fiveday-container">
                         <h3>5-Day Forecast:</h3>
                         <div id="fiveday-results-container">Div for 5-Day Forecast</div>
                     </div>
                 </div>
-                #background
             </div>
         </div>
 

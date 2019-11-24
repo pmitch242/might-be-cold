@@ -1,0 +1,60 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header{
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+/* Search-container and children*/
+#search-container{
+    background: #f8f9fa;
+    padding-bottom: 20px;
+}
+
+#search-header{
+    margin-top: 5px;
+}
+
+#inputGroup{
+    width: 230px;
+}
+
+.list-group-item{
+    width: 100%;
+    text-align: left;
+    padding: 8px;
+    padding-left: 12px;
+}
+
+/* Results container and children*/
+/* Current Result Div*/
+#results-container{
+    background: white;
+}
+
+#current-weather-div{
+    margin: 18px;
+    border: 1.5px solid #efefef;
+    border-radius: 5px;
+    line-height: 34px;
+    padding: 10px;
+}
+
+/* Five day forecast Div  */
+.card{
+    font-size: smaller;
+    color: white;
+    width: 180px;
+    height: 220px;
+    display: inline-block;
+    margin-right: 40px;
+    line-height: 52px;
+    background:#007bff;
+}
+
