@@ -9,7 +9,7 @@ Link: https://pmitch242.github.io/might-be-cold/
 
 
 ## Usage
-The user must type in the city for which they want to know the weather for. Once the user clicks the search button, the city they requested appends as a button. Once the button is pressed, 'Might Be Cold' would generate the current weather information as well as a prediction of the next five days.
+The user must type in the city for which they want to know the weather for. Once the user clicks the search button, the city they requested appends as a button. After the desires city button is pressed, 'Might Be Cold' would generate the current weather information as well as a prediction of the next five days.
 
 ## Credits
 Johns Hopkins full-Stack Bootcamp
