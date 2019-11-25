@@ -97,6 +97,8 @@ $(document).ready(function () {
 
 
     function displayFiveDay() {
+        // Clear fiveDayDiv
+        fiveDayDiv.empty();
 
         var cityFive = $(this).attr("data-city");
         console.log("this was city's weather was requested: " + cityFive);
@@ -111,9 +113,6 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET",
         }).then(function (a) {
-            // Clear fiveDayDiv
-            fiveDayDiv.empty();
-            
             console.log(a);
             for (var i = 0; i < 40; i += 8) {
                 console.log("i = " + i);
@@ -230,6 +229,9 @@ $(document).ready(function () {
         var last = JSON.parse(localStorage.getItem("City"));
         console.log("We found this array in localStorage: ", last);
 
+        // var lastCity = last[last.length-1];
+        // console.log(lastCity);
+
         //loop through cities array
         for (var i = 0; i < last.length; i++) {
             // varible to create button
@@ -245,6 +247,7 @@ $(document).ready(function () {
             $("#city-buttons-lastdiv").prepend(newButtonDiv);
         }
     }
+
 
     // Render buttons
     function renderButtons() {
