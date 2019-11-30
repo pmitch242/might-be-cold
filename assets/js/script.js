@@ -521,7 +521,6 @@ $(document).ready(function () {
 
 
 
-    // display localstorage after page loads
+    // display localstorage and previous search weather info after page loads
     startup();
-    // renderButtons();
 });
